@@ -6,6 +6,7 @@
 
     <groupId>com.cg.dev</groupId>
     <artifactId>snippets-lab</artifactId>
+    <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -13,5 +14,5 @@
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    
+
 </project>
