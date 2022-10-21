@@ -200,7 +200,13 @@ git diff --check					 查看冲突
 
 # git rebase -i 命令详解
 
+![](D:\dev\idea\snippets-lab\idea\images\3c4b8271175be2e7475db07b5de80533.png)
+
+![image-20210531151838328.png](D:\dev\idea\snippets-lab\idea\images\e587fb1eba2a807440992fb0dd408aac.png)
+
 ````
+git rabse -i commit_id
+git rebase即变基，作用如上图
 交互模式可选择命令，前面字母是缩写
 p，pick：使用该次提交
 r，reword：使用该次提交，但重新编辑提交信息
@@ -210,6 +216,8 @@ f，fixup：将该commit和前一个commit合并，但不保留该提交的注�
 x，exec：执行shell命令
 d，drop：丢弃该commit
 
+
+squash								合并多个commit的message的方法，可以第一个设置为p,后面的dou
 ctrl +c 							windows中退出编辑模式(不是esc),i进入编辑模式
 u									退出编辑模式后，按u撤销
 ctrl+r								恢复上一步被撤销的操作
