@@ -198,6 +198,26 @@ git diff commit1 commit2 /b1 b2		 不同commit/分支的diff信息
 git diff --check					 查看冲突
 ````
 
+# git rebase -i 命令详解
+
+````
+交互模式可选择命令，前面字母是缩写
+p，pick：使用该次提交
+r，reword：使用该次提交，但重新编辑提交信息
+e，edit：使用该次提交，但停止到该次提交
+s，squash：将该commit和前一个commit合并
+f，fixup：将该commit和前一个commit合并，但不保留该提交的注释信息
+x，exec：执行shell命令
+d，drop：丢弃该commit
+
+ctrl +c 							windows中退出编辑模式(不是esc),i进入编辑模式
+u									退出编辑模式后，按u撤销
+ctrl+r								恢复上一步被撤销的操作
+git config --global core.editor vim	提示编辑器有问题时输入
+````
+
+
+
 
 
 # git rm --cache与git restore --staged区别
