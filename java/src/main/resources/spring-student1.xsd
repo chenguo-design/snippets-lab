@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xsd:schema  xmlns="http://www.trg.com/schema/student"
+             xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+             targetNamespace="http://www.trg.com/schema/student"
+             elementFormDefault="qualified">
+    <xsd:element name="student" type="student"/>
+
+    <xsd:complexType name="student">
+        <xsd:attribute name="id" use="optional" type="xsd:string"/>
+        <xsd:attribute name="name" use="optional" type="xsd:string"/>
+        <xsd:attribute name="age" use="optional" type="xsd:int"/>
+    </xsd:complexType>
+</xsd:schema>

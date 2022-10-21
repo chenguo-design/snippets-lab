@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:customer="http://www.trg.com/schema/student"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+       http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/task
+       http://www.springframework.org/schema/task/spring-task.xsd
+       http://www.springframework.org/schema/mvc
+       https://www.springframework.org/schema/mvc/spring-mvc.xsd
+       http://www.springframework.org/schema/context
+       https://www.springframework.org/schema/context/spring-context.xsd
+       http://www.trg.com/schema/student
+       http://www.trg.com/schema/student.xsd">
+    <task:annotation-driven/>
+    <mvc:default-servlet-handler/>
+    <mvc:annotation-driven/>
+    <context:component-scan base-package="com.cg.dev"/>
+    <bean id="student" class="com.cg.dev.context.xml.Student">
+        <constructor-arg>
+            <list>
+                <value>1</value>
+            </list>
+        </constructor-arg>
+        <constructor-arg index="1" value="3"/>
+    </bean>
+
+
+    <bean id="student1" class="com.cg.dev.context.xml.Student" name="student1 student2">
+        <constructor-arg value="chenguo1"/>
+    </bean>
+
+
+    <alias name="student1" alias="studentNew"/>
+
+    <customer:student id="student3" name="chenguo3" age="2"/>
+
+
+
+    <bean id="parentBean"  abstract="true">
+        <property name="email" value="s@qq.com"/>
+    </bean>
+
+    <bean id="childrenBean" class="com.cg.dev.context.parent.ChildrenBean" parent="parentBean">
+        <property name="age" value="19"/>
+    </bean>
+
+    <beans default-autowire-candidates="injector" default-autowire="byName">
+        <bean id="injector"  class="com.cg.dev.context.inject.Injector"/>
+        <bean id="injected" class="com.cg.dev.context.inject.Injected"/>
+    </beans>
+</beans>
