@@ -226,6 +226,16 @@ git config --global core.editor vim	提示编辑器有问题时输入
 
 
 
+# git revert命令详解
+
+````
+git revert -n de9cf03fb023a8ae6f294b31ae3f7ebfd6c0e0ad^..HEAD 	-n代表不自动提交 ^..代表范围,闭区间
+
+如果目前是A->B->C->D,使用以下命令以只生成一个命令
+git revert -n B^..D
+git commit -m "revert B,C,C"
+````
+
 
 
 # git rm --cache与git restore --staged区别
