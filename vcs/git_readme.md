@@ -19,6 +19,9 @@
     git commit -A 						commit所有包括没有add的文件（对新增无效）
     git stash/pop/list					操作的是工作区
     git pull							相当于git fetch + git merge
+    
+    rd /s/q								强制删除文件夹和文件夹内的文件
+    del /f/s/q							强制删除文件，文件名必须jia
 
 # git三大分区
 
