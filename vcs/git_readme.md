@@ -16,7 +16,7 @@
     git push --set-upstream origin master   每次提交当前分支到远程分支,需要这样设置<master>是远程名，大多数用的origin
     git push --force <远程主机名> <本地分支名>:<远程分支名>
     
-    git commit -A 						commit所有包括没有add的文件
+    git commit -A 						commit所有包括没有add的文件（对新增无效）
 
 # git三大分区
 
