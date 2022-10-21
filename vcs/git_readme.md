@@ -5,6 +5,7 @@
     git remote add <name> <url>         建立与远程仓库连接
     git remote rm <name>                取消与远程仓库建立连接
     
+    
     git log --pretty=oneline			日志，按q结束
     git reset --hard 81c9aa
     git push -f                         强制回退版本
@@ -21,7 +22,7 @@
     git pull							相当于git fetch + git merge
     
     rd /s/q								强制删除文件夹和文件夹内的文件
-    del /f/s/q							强制删除文件，文件名必须jia
+    del /f/s/q							强制删除文件，文件名必须加后缀
 
 # git三大分区
 
@@ -199,6 +200,23 @@ git diff 或者git diff file			本地工作区和暂存区的diff信息
 git diff --cached 					 暂存区和版本库的diff信息
 git diff commit1 commit2 /b1 b2		 不同commit/分支的diff信息
 git diff --check					 查看冲突
+
+D:\dev\idea\snippets-lab>git diff
+diff --git a/vcs/git_readme.md b/vcs/git_readme.md		#a代表变动前，b代表变动后
+index 3ea330d..3b86a6d 100644	#前两个数字代表变动前后文件的哈希值，最后六位代表对象的模式100代表普通文件，644代表权限
+--- a/vcs/git_readme.md			
++++ b/vcs/git_readme.md			#这两行代表进行比较的两个文件
+@@ -5,6 +5,8 @@					#-代表修改前，从第5行开始的6行，+代表修改后，第五行开始的68行
+     git remote add <name> <url>         建立与远程仓库连接
+     git remote rm <name>                取消与远程仓库建立连接
+
++    yes,i add this
++    
+     git log --pretty=oneline                   日志，按q结束
+     git reset --hard 81c9aa
+     git push -f                         强制回退版本
+@@ -21,7 +23,7 @@
+-代表删除，+代表新增，其余（！）代表
 ````
 
 # git rebase -i 命令详解
