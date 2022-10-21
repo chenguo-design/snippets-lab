@@ -178,7 +178,7 @@ git add -A (git add -all)			提交所有被删除、修改、替换、新增的�
 
 ````
 git restore xxx 使得在工作空间但是不在暂存区的文件撤销修改（内容恢复到没修改之前的状态)
-git restore --staged是将暂存区的文件从暂存区撤出，但不会更改文件(工作区)的内容
+git restore --staged是将暂存区的文件与HEAD中保持一致，但不会更改文件(工作区)的内容
 ````
 
 # git checkout命令详解
@@ -186,6 +186,16 @@ git restore --staged是将暂存区的文件从暂存区撤出，但不会更改
 ````
 git checkout -- <file>		将暂存区的文件覆盖工作区的文件，从而把误删的文件清除
 ````
+
+# git diff命令详解
+
+````
+git diff 或者git diff file			本地工作区和暂存区的diff信息
+git diff --cached 					 暂存区和版本库的diff信息
+git diff commit1 commit2 /b1 b2		 不同commit/分支的diff信息
+````
+
+
 
 # git rm --cache与git restore --staged区别
 
