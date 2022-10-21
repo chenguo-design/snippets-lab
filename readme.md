@@ -37,3 +37,4 @@ dest:\(D:\\dev\\idea\\snippets-lab\\idea\\images\\$1\)
 1.打开网站http://tool.chinaz.com/dns
 2.输入github.com,将出来的ip放入host文件
 ````
+remote 改一下
