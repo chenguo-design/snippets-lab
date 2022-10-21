@@ -70,7 +70,7 @@ git checkout -- <file>
 
 **方法二：git  reset**
 
-* git reset ：回滚到某次提交
+* git reset ：回滚到某次提交，此次之后的提交会被回退到工作区
 * git reset --sort:此次提交之后的修改会被退回到暂存区
 * git reset --hard:此次提交之后的修改不做任何保留，git status查看工作区是没有记录的
 
