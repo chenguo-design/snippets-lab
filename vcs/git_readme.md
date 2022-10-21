@@ -4,8 +4,9 @@
 
     git remote add <name> <url>         建立与远程仓库连接
     git remote rm <name>                取消与远程仓库建立连接
-    
-    
+
+
+​    
     git log --pretty=oneline			日志，按q结束
     git reset --hard 81c9aa
     git push -f                         强制回退版本
@@ -257,6 +258,17 @@ git revert -n B^..D
 git commit -m "revert B,C,C"
 ````
 
+# git merge命令详解
+
+1.快进合并
+
+2.三路合并
+
+````
+git merge --no-ff <branch>			将指定分支合并到当前分支，但总会生成一个合并commit（即便这一合并操作可以快进）
+如果发生冲突利用git status定位到冲突的文件，解决完冲突
+````
+
 
 
 # git rm --cache与git restore --staged区别
@@ -281,8 +293,6 @@ git pull出现冲突后丢弃本地冲突文件修改，采用远程文件覆盖
 git checkout [文件路径]
 例:git checkout test.xml
 ````
-
-方法2
 
 # 提示编辑器问题
 
