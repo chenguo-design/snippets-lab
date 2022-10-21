@@ -187,6 +187,67 @@ git restore --stage是将暂存区的文件从暂存区撤出，但不会更改�
 git checkout -- <file>		将暂存区的文件覆盖工作区的文件，从而把误删的文件清除
 ````
 
+# 忽略某些文件
+
+**1.需要忽略的文件没有提交**
+
+a)如果只是个人想要忽略，则在项目根路径的.git\info\exclude中添加内容，文件内容见c)
+
+b)如果想要项目所有成员都忽略，则在仓库根目录新建.gitignore文件，添加忽略内容。gitignore文件可参考：https://github.com/github/gitignore
+
+c)文件内容参考
+
+````
+/.idea/
+/**/target/
+````
+
+文件内容规则：
+
+````
+1.以斜杠/开头表示目录；
+2.以星号*通配多个字符；
+3.以问号?通配单个字符
+4.以方括号[]包含单个字符的匹配列表；
+5.以叹号!表示不忽略(跟踪)匹配到的文件或目录；
+
+此外，git 对于 .ignore 配置文件是按行从上到下进行规则匹配的，意味着如果前面的规则匹配的范围更大，则后面的规则将不会生效
+
+注意：
+“#” 表示注释
+“!”  表示取消忽略
+空行不作匹配
+若匹配语句中无“/ ” ,便将其视为一个 glob匹配，如'abc'可以匹配 ' abc' , 'cd/abc' , 'ef/abcde.txt'
+若匹配语句中有'/ ' ,便视为一个路径匹配，如'abc/'可以匹配 ' abc' , 'cd/abc' ，但是无法匹配 'ef/abcde.txt'
+若匹配语句以'/ ' 开始，便视为匹配当前目录，如'/abc'可以匹配 ' abc' 但无法匹配 'cd/abc' 
+** 表示匹配零到多级目录
+````
+
+2.**需要忽略的文件已经提交**
+
+````
+2.1编辑.gitignore文件。
+2.2然后如果是单个文件，可以使用如下命令从仓库中删除：
+	git rm --cached logs/xx.log
+	如果是整个目录：
+	git rm --cached -r logs
+	如果文件很多，那么直接
+	git rm --cached -r .
+	如果提示某个文件无法忽略，可以添加-f参数强制忽略。
+	git rm -f --cached logs/xx.log
+2.3 然后
+	git add .
+	git commit -m "Update .gitignore"
+
+把被忽略的某个文件强制添加回去：
+git add -f filename
+
+ignore规则检查：
+git check-ignore
+````
+
+
+
 # 相关问题
 
 1.已经将.idea文件提交到远程仓库，如何取消
@@ -195,4 +256,4 @@ git checkout -- <file>		将暂存区的文件覆盖工作区的文件，从而�
 
 2.如何忽略.idea文件夹？
 
-答：安装.gitignore插件，右击.idea文件夹，选择git，选择add to ignore
+答：安装.gitignore插件，右击.idea文件夹，选择git，选择add to ignore，最终项目根路径所在目录的git\info\exclude中会增加配置信息
