@@ -17,6 +17,8 @@
     git push --force <远程主机名> <本地分支名>:<远程分支名>
     
     git commit -A 						commit所有包括没有add的文件（对新增无效）
+    git stash/pop/list					操作的是工作区
+    git pull							相当于git fetch + git merge
 
 # git三大分区
 
@@ -101,7 +103,7 @@ git reset --hard hash
 git log						//查找需要删除的前一次提交的commit_id
 git rebase -i commit_id     //将commit_id替换为复制的值，-i代表交互模式
 进入vim编辑模式，将要删除的commit前面的pick改为drop
-保存并退出vim
+保存并退出vim(windows退出编辑模式是按ctrl+C，而不是esc)
 ````
 
 2）解决冲突
@@ -193,6 +195,7 @@ git checkout -- <file>		将暂存区的文件覆盖工作区的文件，从而�
 git diff 或者git diff file			本地工作区和暂存区的diff信息
 git diff --cached 					 暂存区和版本库的diff信息
 git diff commit1 commit2 /b1 b2		 不同commit/分支的diff信息
+git diff --check					 查看冲突
 ````
 
 
@@ -207,6 +210,26 @@ git restore --staged file：Git 将文件从HEAD 提交复制到索引中，而�
 如果当前提交缺少该文件，这具有从索引中删除该文件的效果。所以在这种情况下它和git rm --cached做同样的事情。
 
 git reset <em>file</em>：这会将文件的HEAD 版本复制到索引中，就像git restore --staged <em>file</em>。
+````
+
+# git解决冲突
+
+**方法1**
+
+````
+git pull出现冲突后丢弃本地冲突文件修改，采用远程文件覆盖本地文件
+命令：
+git checkout [文件路径]
+例:git checkout test.xml
+````
+
+方法2
+
+# 提示编辑器问题
+
+````
+当电脑中的默认编辑器vi被删除，想要使用vim作为git commit的编辑器需要通过以下命令指定
+git config --global core.editor vim
 ````
 
 
