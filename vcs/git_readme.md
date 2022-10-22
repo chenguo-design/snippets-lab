@@ -7,10 +7,10 @@
 
 
 ​    
-    git log --pretty=oneline			日志，按q结束
-    git reset --hard 81c9aa
-    git push -f                         强制回退版本
-    
+​    git log --pretty=oneline			日志，按q结束
+​    git reset --hard 81c9aa
+​    git push -f                         强制回退版本
+​    
     git revert -n 81c9aa
     git commit -m "xxx"
     git push                            撤销某个版本
@@ -266,8 +266,22 @@ git commit -m "revert B,C,C"
 
 ````
 git merge --no-ff <branch>			将指定分支合并到当前分支，但总会生成一个合并commit（即便这一合并操作可以快进）
-如果发生冲突利用git status定位到冲突的文件，解决完冲突
+如果发生冲突利用git status定位到冲突的文件，解决完冲突后add到暂存区
 ````
+
+# git pull详解
+
+```
+git pull 等价于git fetch 和git merge 	其中合并的是本地版本库，不是工作区或暂存区
+
+git pull origin master等价于
+git fetch origin master + git merge origin/master
+
+注意：如果有文件冲突，git会要求先把会冲突的文件commit
+git merge --abort						将会抛弃合并过程而且尝试重建合并前的状态
+git diff								查看you
+
+```
 
 
 
