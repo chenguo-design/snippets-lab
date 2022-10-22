@@ -38,4 +38,4 @@ dest:\(D:\\dev\\idea\\snippets-lab\\idea\\images\\$1\)
 2.输入github.com,将出来的ip放入host文件
 ````
 
-local 改一下
+remote 改两下
